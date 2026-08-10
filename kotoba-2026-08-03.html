@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8月3日の ことば ふくしゅう</title>
+<style>
+  :root{
+    --ground:#eef1f6; --card:#ffffff; --card-border:#e7ebf0;
+    --ink:#22303f; --ink-soft:#5b6773; --muted:#98a2ae;
+    --accent:#14795d; --accent-ink:#ffffff;
+    --tab-bg:#e4e8ee; --tab-ink:#55606d;
+    --banner-bg:#e9f8f0; --banner-edge:#14795d; --banner-ink:#2f6d56;
+    --reveal-bg:#f3faf7; --reveal-ink:#155f49; --reveal-edge:#bfe6d6;
+    --tag-bg:#fdf1cf; --tag-ink:#8a6a12;
+    --shadow:rgba(30,50,80,.07);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --ground:#10161d; --card:#1a2531; --card-border:#26333f;
+      --ink:#e8eef4; --ink-soft:#a9b5c1; --muted:#6f7d8a;
+      --accent:#3fbf92; --accent-ink:#06231a;
+      --tab-bg:#222f3b; --tab-ink:#a9b5c1;
+      --banner-bg:#14261f; --banner-edge:#3fbf92; --banner-ink:#8fdcbf;
+      --reveal-bg:#152a22; --reveal-ink:#8fdcbf; --reveal-edge:#2c5344;
+      --tag-bg:#3a3320; --tag-ink:#e8cf8e;
+      --shadow:rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:"Hiragino Maru Gothic ProN","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Meiryo","Noto Sans JP",system-ui,sans-serif;
+    line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:22px 18px 64px;}
+  h1{
+    font-size:1.05rem; font-weight:700; color:var(--ink-soft);
+    text-align:center; margin:4px 0 18px; letter-spacing:.02em;
+  }
+  .tabs{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:20px;}
+  .tab{
+    appearance:none; border:none; cursor:pointer;
+    font:inherit; font-weight:700; font-size:.95rem;
+    padding:9px 20px; border-radius:999px;
+    background:var(--tab-bg); color:var(--tab-ink);
+    transition:background .15s, color .15s, transform .05s;
+  }
+  .tab:hover{filter:brightness(.98)}
+  .tab:active{transform:translateY(1px)}
+  .tab[aria-selected="true"]{background:var(--accent); color:var(--accent-ink);}
+  .tab:focus-visible{outline:3px solid var(--accent); outline-offset:2px;}
+  .banner{
+    background:var(--banner-bg); color:var(--banner-ink);
+    border-left:4px solid var(--banner-edge); border-radius:8px;
+    padding:12px 16px; margin-bottom:18px; font-size:.95rem; font-weight:500;
+  }
+  .cards{display:flex; flex-direction:column; gap:14px;}
+  .card{
+    background:var(--card); border:1px solid var(--card-border);
+    border-radius:14px; padding:18px 20px; box-shadow:0 2px 10px var(--shadow);
+    cursor:pointer; transition:border-color .15s, box-shadow .15s;
+  }
+  .card:hover{border-color:var(--accent);}
+  .card:focus-visible{outline:3px solid var(--accent); outline-offset:2px;}
+  .card.open{border-color:var(--reveal-edge);}
+  .prompt{font-size:1.22rem; font-weight:600; color:var(--ink); margin:0;}
+  .en2{margin:7px 0 0; font-size:1.02rem; font-weight:500; color:var(--ink-soft);}
+  .tag{
+    display:inline-block; vertical-align:middle; margin-left:8px;
+    background:var(--tag-bg); color:var(--tag-ink);
+    font-size:.72rem; font-weight:700; padding:2px 9px; border-radius:6px;
+  }
+  .cue{
+    display:flex; align-items:center; gap:6px;
+    margin-top:10px; color:var(--muted); font-size:.82rem; font-weight:500;
+  }
+  .cue .hint{color:var(--muted);}
+  .answer{
+    display:none; margin-top:12px; padding:12px 14px;
+    background:var(--reveal-bg); color:var(--reveal-ink);
+    border-radius:10px; font-size:1.06rem; font-weight:600;
+  }
+  .answer .rd{font-size:1.14rem;}
+  .answer .ex{display:block; margin-top:6px; font-weight:500;}
+  .card.open .answer{display:block; animation:pop .18s ease;}
+  .card.open .cue{display:none;}
+  @keyframes pop{from{opacity:0; transform:translateY(-3px)} to{opacity:1; transform:none}}
+  @media (prefers-reduced-motion:reduce){.card.open .answer{animation:none}}
+  .foot{display:flex; justify-content:center; margin-top:26px;}
+  .closeall{
+    appearance:none; border:none; cursor:pointer; font:inherit; font-weight:700;
+    color:var(--tab-ink); background:var(--tab-bg);
+    padding:11px 26px; border-radius:999px;
+  }
+  .closeall:hover{filter:brightness(.98)}
+  .closeall:focus-visible{outline:3px solid var(--accent); outline-offset:2px;}
+  .panel[hidden]{display:none !important;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>8月3日の ことば　ふくしゅう　／　Words from 3 August</h1>
+
+  <div class="tabs" role="tablist" aria-label="グループ">
+    <button class="tab" role="tab" id="tab-0" aria-controls="panel-0" aria-selected="true">① おかね</button>
+    <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="false">② くに・ばしょ</button>
+    <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false">③ 便（びん）</button>
+    <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false">④ あじ・りょうり</button>
+    <button class="tab" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false">⑤ そのほか</button>
+    <button class="tab" role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false">⑥ つかってみる</button>
+  </div>
+
+  <div class="banner" id="banner"></div>
+
+  <div class="panel" id="panel-0" role="tabpanel" aria-labelledby="tab-0"><div class="cards"></div></div>
+  <div class="panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1" hidden><div class="cards"></div></div>
+  <div class="panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden><div class="cards"></div></div>
+  <div class="panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden><div class="cards"></div></div>
+  <div class="panel" id="panel-4" role="tabpanel" aria-labelledby="tab-4" hidden><div class="cards"></div></div>
+  <div class="panel" id="panel-5" role="tabpanel" aria-labelledby="tab-5" hidden><div class="cards"></div></div>
+
+  <div class="foot"><button class="closeall" id="closeall">ぜんぶ とじる</button></div>
+</div>
+
+<script>
+  const BANNERS = [
+    "ことばを 見て、いみと 読み方を 言いましょう。クリックで 答えが 出ます。",
+    "ことばを 見て、いみと 読み方を 言いましょう。クリックで 答えが 出ます。",
+    "「便（びん）」の なかまです。どれも「もの・人を はこぶ」ときに つかいます。",
+    "レストランと キッチンの ことばです。",
+    "8月3日に 出た そのほかの ことばです。",
+    "ことばを つかって、じぶんの ことばで 答えましょう。クリックで 言い方の れいが 出ます。"
+  ];
+
+  const MONEY = [
+    {p:"物価", rd:"ぶっか", en:"cost of living / prices", ex:"物価が 上がります。", hint:"国ぜんたいの ねだん"},
+    {p:"値段", rd:"ねだん", en:"price (of one thing)", ex:"物の 値段が 上がります。", hint:"1つの ものの ねだん"},
+    {p:"給料", rd:"きゅうりょう", en:"salary / pay", ex:"給料が 上がりました。"},
+    {p:"需要", rd:"じゅよう", en:"demand — people who need it", ex:"需要が あります。／ 需要が ないです。", tag:"むずかしい"},
+    {p:"供給", rd:"きょうきゅう", en:"supply — what is given / provided", ex:"需要と 供給。", tag:"むずかしい", hint:"需要の 反対がわ"}
+  ];
+
+  const PLACE = [
+    {p:"永住権", rd:"えいじゅうけん", en:"permanent residency", ex:"永住権を 取りました。"},
+    {p:"市民権", rd:"しみんけん", en:"citizenship", ex:"市民権が あります。", hint:"永住権より つよい"},
+    {p:"北半球", rd:"きたはんきゅう", en:"northern hemisphere", ex:"日本は 北半球に あります。"},
+    {p:"南半球", rd:"みなみはんきゅう", en:"southern hemisphere", ex:"ニュージーランドは 南半球に あります。"},
+    {p:"砂漠", rd:"さばく", en:"desert", ex:"あそこは 砂漠です。"}
+  ];
+
+  const BIN = [
+    {p:"便", rd:"びん", en:"a service that carries something", ex:"「〜便」の 形で つかいます。", tag:"もとの ことば"},
+    {p:"直行便", rd:"ちょっこうびん", en:"direct flight", ex:"沖縄まで 直行便が あります。"},
+    {p:"船便", rd:"ふなびん", en:"sea mail (slow, cheap)", ex:"船便で 送ります。"},
+    {p:"航空便", rd:"こうくうびん", en:"air mail (fast)", ex:"航空便で 送ります。"},
+    {p:"宅急便", rd:"たっきゅうびん", en:"home delivery service", ex:"宅急便で 送ります。", hint:"日本の 中の たくはい"}
+  ];
+
+  const FOOD = [
+    {p:"辛さ", rd:"からさ", en:"spice level", ex:"辛さは どうしますか。"},
+    {p:"甘さ", rd:"あまさ", en:"sweetness level", ex:"甘さは どうしますか。"},
+    {p:"小さじ・大さじ", rd:"こさじ・おおさじ", en:"teaspoon / tablespoon", ex:"砂糖を 小さじ 一杯（いっぱい）。"},
+    {p:"一杯・二杯・三杯", rd:"いっぱい・にはい・さんばい", en:"one / two / three spoonfuls (or cups)", ex:"大さじ 三杯（さんばい） 入れます。", tag:"音が かわる", hint:"いっぱい → にはい → さんばい"},
+    {p:"タイ料理・インド料理・メキシコ料理", rd:"タイりょうり・インドりょうり・メキシコりょうり", en:"Thai / Indian / Mexican food", ex:"タイ料理が 好きです。"},
+    {p:"中華・韓国料理・沖縄料理", rd:"ちゅうか・かんこくりょうり・おきなわりょうり", en:"Chinese / Korean / Okinawan food", ex:"今日は 沖縄料理に しませんか。", hint:"中華＝中国料理の ふつうの 言い方"}
+  ];
+
+  const OTHER = [
+    {p:"学年を 落とす", rd:"がくねんを おとす", en:"to drop down a year group", ex:"学年を 落としました。"},
+    {p:"全然 違います", rd:"ぜんぜん ちがいます", en:"completely different", ex:"沖縄に 来て、今は 前と 全然 違います。"},
+    {p:"チームメイトが 入りました", rd:"チームメイトが はいりました", en:"new teammates joined", ex:"さいきん、二人 チームメイトが 入りました。"},
+    {p:"〜が 楽しみです", rd:"〜が たのしみです", en:"I'm looking forward to ~", ex:"これからの せいかつが 楽しみです。"}
+  ];
+
+  const USE = [
+    {p:"1. 沖縄の 物価は、前に 住んでいた 所と くらべて どうですか。",
+     rd:"", en:"", ex:"れい：沖縄は 物の 値段が 高いです。船で 運びますから。",
+     hint:"物価・値段"},
+    {p:"2. 島から 那覇まで、どうやって 行きますか。どのくらい かかりますか。",
+     rd:"", en:"", ex:"れい：フェリーで 30分ぐらい、それから 車で 20分ぐらいです。",
+     hint:"時間の 言い方"},
+    {p:"3. アメリカに 荷物を 送るとき、船便と 航空便、どちらを つかいますか。どうしてですか。",
+     rd:"", en:"", ex:"れい：急ぐときは 航空便で 送ります。安く 送りたいときは 船便です。",
+     hint:"船便・航空便"},
+    {p:"4. タイ料理の お店で「辛さは どうしますか」と 聞かれました。何と 答えますか。",
+     rd:"", en:"", ex:"れい：あまり 辛くしないで ください。／ 一番 辛いのを おねがいします。",
+     hint:"辛さ"},
+    {p:"5. 日本と ニュージーランドは、季節（きせつ）が 反対（はんたい）です。どうしてですか。",
+     rd:"", en:"", ex:"れい：日本は 北半球に あって、ニュージーランドは 南半球に あるからです。",
+     hint:"北半球・南半球"}
+  ];
+
+  const DATA = [MONEY, PLACE, BIN, FOOD, OTHER, USE];
+  const IDX = [0,1,2,3,4,5];
+  const panels = IDX.map(i => document.getElementById("panel-"+i));
+  const tabs = IDX.map(i => document.getElementById("tab-"+i));
+
+  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+  function render(){
+    DATA.forEach((set, i) => {
+      const box = panels[i].querySelector(".cards");
+      box.innerHTML = set.map(item => {
+        const tag  = item.tag  ? `<span class="tag">${esc(item.tag)}</span>` : "";
+        const hint = item.hint ? `<span class="hint">（${esc(item.hint)}）</span>` : "";
+        const rd   = item.rd   ? `<span class="rd">${esc(item.rd)}</span>` : "";
+        const en   = item.en   ? `${rd ? "　／　" : ""}${esc(item.en)}` : "";
+        const ex   = item.ex   ? `<span class="ex">${esc(item.ex)}</span>` : "";
+        return `<div class="card" tabindex="0" role="button" aria-expanded="false">
+            <p class="prompt">${esc(item.p)}${tag}</p>
+            <div class="cue">▶ クリック ${hint}</div>
+            <div class="answer">${rd}${en}${ex}</div>
+          </div>`;
+      }).join("");
+    });
+  }
+
+  function toggle(card){
+    const open = card.classList.toggle("open");
+    card.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
+  document.addEventListener("click", e => {
+    const card = e.target.closest(".card");
+    if(card){ toggle(card); }
+  });
+  document.addEventListener("keydown", e => {
+    if((e.key === "Enter" || e.key === " ") && e.target.classList.contains("card")){
+      e.preventDefault(); toggle(e.target);
+    }
+  });
+
+  function selectTab(idx){
+    tabs.forEach((t,i) => t.setAttribute("aria-selected", i === idx ? "true" : "false"));
+    panels.forEach((p,i) => p.hidden = i !== idx);
+    document.getElementById("banner").textContent = BANNERS[idx];
+  }
+  tabs.forEach((t,i) => t.addEventListener("click", () => selectTab(i)));
+
+  document.getElementById("closeall").addEventListener("click", () => {
+    document.querySelectorAll(".card.open").forEach(c => {
+      c.classList.remove("open"); c.setAttribute("aria-expanded","false");
+    });
+  });
+
+  render();
+  selectTab(0);
+</script>
+</body>
+</html>

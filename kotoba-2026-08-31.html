@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8月31日の ことば ふくしゅう</title>
+<style>
+  :root{
+    --ground:#eef1f6; --card:#ffffff; --card-border:#e7ebf0;
+    --ink:#22303f; --ink-soft:#5b6773; --muted:#98a2ae;
+    --accent:#14795d; --accent-ink:#ffffff;
+    --tab-bg:#e4e8ee; --tab-ink:#55606d;
+    --banner-bg:#e9f8f0; --banner-edge:#14795d; --banner-ink:#2f6d56;
+    --reveal-bg:#f3faf7; --reveal-ink:#155f49; --reveal-edge:#bfe6d6;
+    --tag-bg:#fdf1cf; --tag-ink:#8a6a12;
+    --shadow:rgba(30,50,80,.07);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --ground:#10161d; --card:#1a2531; --card-border:#26333f;
+      --ink:#e8eef4; --ink-soft:#a9b5c1; --muted:#6f7d8a;
+      --accent:#3fbf92; --accent-ink:#06231a;
+      --tab-bg:#222f3b; --tab-ink:#a9b5c1;
+      --banner-bg:#14261f; --banner-edge:#3fbf92; --banner-ink:#8fdcbf;
+      --reveal-bg:#152a22; --reveal-ink:#8fdcbf; --reveal-edge:#2c5344;
+      --tag-bg:#3a3320; --tag-ink:#e8cf8e;
+      --shadow:rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:"Hiragino Maru Gothic ProN","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Meiryo","Noto Sans JP",system-ui,sans-serif;
+    line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:22px 18px 64px;}
+  h1{
+    font-size:1.05rem; font-weight:700; color:var(--ink-soft);
+    text-align:center; margin:4px 0 18px; letter-spacing:.02em;
+  }
+  .tabs{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:20px;}
+  .tab{
+    appearance:none; border:none; cursor:pointer;
+    font:inherit; font-weight:700; font-size:.95rem;
+    padding:9px 20px; border-radius:999px;
+    background:var(--tab-bg); color:var(--tab-ink);
+    transition:background .15s, color .15s, transform .05s;
+  }
+  .tab:hover{filter:brightness(.98)}
+  .tab:active{transform:translateY(1px)}
+  .tab[aria-selected="true"]{background:var(--accent); color:var(--accent-ink);}
+  .tab:focus-visible{outline:3px solid var(--accent); outline-offset:2px;}
+  .banner{
+    background:var(--banner-bg); color:var(--banner-ink);
+    border-left:4px solid var(--banner-edge); border-radius:8px;
+    padding:12px 16px; margin-bottom:18px; font-size:.95rem; font-weight:500;
+  }
+  .cards{display:flex; flex-direction:column; gap:14px;}
+  .card{
+    background:var(--card); border:1px solid var(--card-border);
+    border-radius:14px; padding:18px 20px; box-shadow:0 2px 10px var(--shadow);
+    cursor:pointer; transition:border-color .15s, box-shadow .15s;
+  }
+  .card:hover{border-color:var(--accent);}
+  .card:focus-visible{outline:3px solid var(--accent); outline-offset:2px;}
+  .card.open{border-color:var(--reveal-edge);}
+  .prompt{font-size:1.22rem; font-weight:600; color:var(--ink); margin:0;}
+  .en2{margin:7px 0 0; font-size:1.02rem; font-weight:500; color:var(--ink-soft);}
+  .tag{
+    display:inline-block; vertical-align:middle; margin-left:8px;
+    background:var(--tag-bg); color:var(--tag-ink);
+    font-size:.72rem; font-weight:700; padding:2px 9px; border-radius:6px;
+  }
+  .cue{
+    display:flex; align-items:center; gap:6px;
+    margin-top:10px; color:var(--muted); font-size:.82rem; font-weight:500;
+  }
+  .cue .hint{color:var(--muted);}
+  .answer{
+    display:none; margin-top:12px; padding:12px 14px;
+    background:var(--reveal-bg); color:var(--reveal-ink);
+    border-radius:10px; font-size:1.06rem; font-weight:600;
+  }
+  .answer .rd{font-size:1.14rem;}
+  .answer .ex{display:block; margin-top:6px; font-weight:500;}
+  .card.open .answer{display:block; animation:pop .18s ease;}
+  .card.open .cue{display:none;}
+  @keyframes pop{from{opacity:0; transform:translateY(-3px)} to{opacity:1; transform:none}}
+  @media (prefers-reduced-motion:reduce){.card.open .answer{animation:none}}
+  .foot{display:flex; justify-content:center; margin-top:26px;}
+  .closeall{
+    appearance:none; border:none; cursor:pointer; font:inherit; font-weight:700;
+    color:var(--tab-ink); background:var(--tab-bg);
+    padding:11px 26px; border-radius:999px;
+  }
+  .closeall:hover{filter:brightness(.98)}
+  .closeall:focus-visible{outline:3px solid var(--accent); outline-offset:2px;}
+  .panel[hidden]{display:none !important;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>8月31日の ことば　ふくしゅう　／　Words from 31 August</h1>
+
+  <div class="tabs" role="tablist" aria-label="グループ">
+    <button class="tab" role="tab" id="tab-0" aria-controls="panel-0" aria-selected="true">① 島の 家</button>
+    <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="false">② ちきゅうの ニュース</button>
+    <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false">③ つたえる・きもち</button>
+    <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false">④ ほとんど</button>
+    <button class="tab" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false">⑤ 漢字の かぞく</button>
+    <button class="tab" role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false">⑥ 〜なら・〜でも</button>
+    <button class="tab" role="tab" id="tab-6" aria-controls="panel-6" aria-selected="false">⑦ つかってみる</button>
+  </div>
+
+  <div class="banner" id="banner"></div>
+
+
+  <div class="panel" id="panel-0" role="tabpanel" aria-labelledby="tab-0"><div class="cards"></div></div>
+  <div class="panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1" hidden><div class="cards"></div></div>
+  <div class="panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden><div class="cards"></div></div>
+  <div class="panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden><div class="cards"></div></div>
+  <div class="panel" id="panel-4" role="tabpanel" aria-labelledby="tab-4" hidden><div class="cards"></div></div>
+  <div class="panel" id="panel-5" role="tabpanel" aria-labelledby="tab-5" hidden><div class="cards"></div></div>
+  <div class="panel" id="panel-6" role="tabpanel" aria-labelledby="tab-6" hidden><div class="cards"></div></div>
+
+  <div class="foot"><button class="closeall" id="closeall">ぜんぶ とじる</button></div>
+</div>
+
+<script>
+  const BANNERS = [
+    "島で 家を さがす 話です。★「さがす」と「見つかる」は ペアです。じぶんが するか、そう なるか。",
+    "★「氷河（ひょうが）」＝glacier です。「氷山（ひょうざん）」＝iceberg。にて いますが ちがいます。ニュースは NHK NEWS WEB EASY（www3.nhk.or.jp/news/easy/）で 読めます。",
+    "★「気分が 悪い」＝からだ。「機嫌が 悪い」＝こころ。ここを まちがえると いみが 変わります。",
+    "「ほとんど」の 2つの つかい方＝①ほとんど＋どうし ②ほとんどの＋めいし。",
+    "同じ 漢字が 入ると、いみも つながります。1つ おぼえると 10 わかります。",
+    "★今日の 文法です。「〜なら」＝もし それだったら。「疑問詞＋でも」＝どれでも いい。",
+    "ことばを つかって、じぶんの ことばで 答えましょう。クリックで 言い方の れいが 出ます。"
+  ];
+
+  const IE = [
+    {"p": "空き家", "rd": "あきや", "en": "an empty house", "ex": "島に 空き家は いっぱい ありますが、古くて 大変です。"},
+    {"p": "借りる", "rd": "かりる", "en": "to rent", "ex": "島に 家は いっぱい ありますが、もう 借りる ことが できません。"},
+    {"p": "不動産会社", "rd": "ふどうさんがいしゃ", "en": "a real estate agency", "ex": "島には 不動産会社が ないんです。", "tag": "★島"},
+    {"p": "友達の 友達の しょうかい", "en": "an introduction through a friend of a friend", "ex": "友達の 友達の しょうかいで 家を さがします。", "hint": "島の さがし方"},
+    {"p": "さがす", "en": "to look for — you do it", "ex": "友達の 友達の しょうかいで 家を さがします。", "tag": "★ペア", "hint": "じぶんが する"},
+    {"p": "見つかる", "rd": "みつかる", "en": "to be found — it happens", "ex": "ネパールでは 友達の 友達が まだ 見つかりません。", "hint": "そう なる"}
+  ];
+
+  const NEWS = [
+    {"p": "氷河", "rd": "ひょうが", "en": "a glacier", "ex": "氷河の 氷が とけて 大変ですね。", "tag": "★"},
+    {"p": "氷山", "rd": "ひょうざん", "en": "an iceberg — not the same word", "ex": "", "hint": "氷河（ひょうが）と ちがいます"},
+    {"p": "とける", "en": "to melt", "ex": "氷が とけて います。"},
+    {"p": "温暖化現象", "rd": "おんだんかげんしょう", "en": "global warming", "ex": "温暖化現象で 氷河が とけて います。"},
+    {"p": "ツバル", "en": "Tuvalu", "ex": "ツバルにも 同じ 問題が あります。"},
+    {"p": "九つ", "rd": "ここのつ", "en": "nine", "ex": "ツバルには 島が 九つ あります。"},
+    {"p": "細長い", "rd": "ほそながい", "en": "long and narrow", "ex": "ツバルの 島は 細長いです。"}
+  ];
+
+  const TSUTAERU = [
+    {"p": "〜と 伝えて ください。", "rd": "〜と つたえて ください", "en": "please let them know ~ / send a message", "ex": "メッセージを 伝えて ください。"},
+    {"p": "気分が 悪い", "rd": "きぶんが わるい", "en": "feeling sick, unwell", "ex": "", "tag": "★ペア", "hint": "からだの こと"},
+    {"p": "機嫌が 悪い", "rd": "きげんが わるい", "en": "in a bad mood", "ex": "", "hint": "こころの こと"},
+    {"p": "同時に", "rd": "どうじに", "en": "at the same time", "ex": "二人が 同時に 話します。"},
+    {"p": "同じ", "rd": "おなじ", "en": "the same", "ex": "同じ 漢字：同時（どうじ）at the same time", "tag": "漢字"}
+  ];
+
+  const HOTONDO = [
+    {"p": "ほとんど 同じです。", "en": "they are mostly the same", "ex": "アマゾンと 楽天は ほとんど 同じです。"},
+    {"p": "ほとんど 変わりません。", "rd": "ほとんど かわりません", "en": "it hardly changes", "ex": ""},
+    {"p": "ほとんどの 野菜が 好きです。", "rd": "ほとんどの やさいが すきです", "en": "I like most vegetables.", "ex": "", "tag": "形", "hint": "ほとんどの＋めいし"},
+    {"p": "ほとんどの 人は やさしいです。", "en": "most people are kind", "ex": ""},
+    {"p": "ほとんどの 日本人は おはしを つかいます。", "en": "most Japanese people use chopsticks", "ex": ""}
+  ];
+
+  const KANJI = [
+    {"p": "飲料水", "rd": "いんりょうすい", "en": "drinking water", "ex": "", "tag": "飲"},
+    {"p": "飲食", "rd": "いんしょく", "en": "eating and drinking", "ex": ""},
+    {"p": "飲食品", "rd": "いんしょくひん", "en": "food and drink products", "ex": ""},
+    {"p": "飲食店", "rd": "いんしょくてん", "en": "a restaurant (a place that serves food and drink)", "ex": ""},
+    {"p": "食堂", "rd": "しょくどう", "en": "a cafeteria", "ex": "", "tag": "食"},
+    {"p": "食事", "rd": "しょくじ", "en": "a meal", "ex": ""},
+    {"p": "外", "rd": "そと", "en": "outside", "ex": "", "tag": "外"},
+    {"p": "外食", "rd": "がいしょく", "en": "eating out", "ex": "今日 外食しますか。それとも 家で 食べますか。"},
+    {"p": "外国人", "rd": "がいこくじん", "en": "a person from another country", "ex": ""},
+    {"p": "出口", "rd": "でぐち", "en": "an exit", "ex": "", "tag": "出"},
+    {"p": "出発", "rd": "しゅっぱつ", "en": "departure", "ex": ""},
+    {"p": "出国", "rd": "しゅっこく", "en": "leaving the country", "ex": ""},
+    {"p": "休日", "rd": "きゅうじつ", "en": "a holiday", "ex": "", "tag": "休"},
+    {"p": "休暇", "rd": "きゅうか", "en": "time off, leave", "ex": ""},
+    {"p": "定休日", "rd": "ていきゅうび", "en": "the regular day a shop is closed", "ex": "定休日は いつですか。", "hint": "お店で つかえます"},
+    {"p": "自由時間", "rd": "じゆうじかん", "en": "free time", "ex": ""}
+  ];
+
+  const NARA = [
+    {"p": "和食なら 何でも 食べます。", "rd": "わしょくなら なんでも たべます", "en": "If it's Japanese food, I'll eat anything.", "ex": "", "tag": "〜なら"},
+    {"p": "和食でも、タイ料理でも、インド料理でも、メキシコ料理でも、何でも 食べます。", "en": "Japanese, Thai, Indian, Mexican — I'll eat anything.", "ex": "", "tag": "★今日の文法", "hint": "疑問詞＋でも"},
+    {"p": "辛いソースと いっしょなら、何でも 食べます。", "rd": "からいソースと いっしょなら", "en": "If it comes with hot sauce, I'll eat anything.", "ex": ""},
+    {"p": "長く 会って いない 友達が 福岡に います。", "rd": "ながく あって いない ともだち", "en": "I have a friend in Fukuoka I haven't seen in a long time.", "ex": ""},
+    {"p": "久しぶりに 会いたいんです。", "rd": "ひさしぶりに あいたいんです", "en": "I want to see them — it's been a long time.", "ex": ""}
+  ];
+
+  const USE = [
+    {"p": "1. 島で 家を さがす とき、どうしますか。", "ex": "れい：島には 不動産会社が ないので、友達の 友達の しょうかいで さがします。", "hint": "①の 言い方"},
+    {"p": "2. 「気分が 悪い」と「機嫌が 悪い」、どこが ちがいますか。", "ex": "れい：気分は からだの こと。機嫌は こころの ことです。", "hint": "③の ペア"},
+    {"p": "3. 何を 食べますか。「〜でも」を つかって 答えて ください。", "ex": "れい：和食でも タイ料理でも、何でも 食べます。", "hint": "今日の 文法"},
+    {"p": "4. お店の 人に、休みの 日を 聞いて ください。", "ex": "れい：定休日は いつですか。", "hint": "⑤の ことば"},
+    {"p": "5. 長く 会って いない 友達の 話を して ください。", "ex": "れい：長く 会って いない 友達が 福岡に います。久しぶりに 会いたいんです。", "hint": "⑥の 言い方"}
+  ];
+
+  const DATA = [IE, NEWS, TSUTAERU, HOTONDO, KANJI, NARA, USE];
+  const IDX = [0,1,2,3,4,5,6];
+  const panels = IDX.map(i => document.getElementById("panel-"+i));
+  const tabs = IDX.map(i => document.getElementById("tab-"+i));
+
+  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+  function render(){
+    DATA.forEach((set, i) => {
+      const box = panels[i].querySelector(".cards");
+      box.innerHTML = set.map(item => {
+        const tag  = item.tag  ? `<span class="tag">${esc(item.tag)}</span>` : "";
+        const hint = item.hint ? `<span class="hint">（${esc(item.hint)}）</span>` : "";
+        const rd   = item.rd   ? `<span class="rd">${esc(item.rd)}</span>` : "";
+        const en   = item.en   ? `${rd ? "　／　" : ""}${esc(item.en)}` : "";
+        const ex   = item.ex   ? `<span class="ex">${esc(item.ex)}</span>` : "";
+        return `<div class="card" tabindex="0" role="button" aria-expanded="false">
+            <p class="prompt">${esc(item.p)}${tag}</p>
+            <div class="cue">▶ クリック ${hint}</div>
+            <div class="answer">${rd}${en}${ex}</div>
+          </div>`;
+      }).join("");
+    });
+  }
+
+  function toggle(card){
+    const open = card.classList.toggle("open");
+    card.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
+  document.addEventListener("click", e => {
+    const card = e.target.closest(".card");
+    if(card){ toggle(card); }
+  });
+  document.addEventListener("keydown", e => {
+    if((e.key === "Enter" || e.key === " ") && e.target.classList.contains("card")){
+      e.preventDefault(); toggle(e.target);
+    }
+  });
+
+  function selectTab(idx){
+    tabs.forEach((t,i) => t.setAttribute("aria-selected", i === idx ? "true" : "false"));
+    panels.forEach((p,i) => p.hidden = i !== idx);
+    document.getElementById("banner").textContent = BANNERS[idx];
+  }
+  tabs.forEach((t,i) => t.addEventListener("click", () => selectTab(i)));
+
+  document.getElementById("closeall").addEventListener("click", () => {
+    document.querySelectorAll(".card.open").forEach(c => {
+      c.classList.remove("open"); c.setAttribute("aria-expanded","false");
+    });
+  });
+
+  render();
+  selectTab(0);
+</script>
+</body>
+</html>

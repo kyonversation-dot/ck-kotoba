@@ -1,0 +1,169 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9月10日 れんしゅう問題｜だれか・だれも・だれでも</title>
+<style>
+  :root{
+    --navy:#1b3a5c; --ocean:#0e7c9e; --coral:#e86a4b; --gray:#6b7280;
+    --pale:#eef5f9; --line:#d7e3ea; --bg:#faf8f4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Yu Gothic UI","Meiryo",sans-serif;background:var(--bg);color:var(--navy);
+       line-height:1.7;padding:28px 20px 60px}
+  .wrap{max-width:920px;margin:0 auto}
+  header{border-bottom:4px solid var(--ocean);padding-bottom:14px;margin-bottom:8px}
+  h1{font-size:27px;letter-spacing:.01em}
+  header .sub{font-size:15px;color:var(--gray);margin-top:5px}
+  .bar{display:flex;gap:10px;align-items:center;margin:18px 0 26px;flex-wrap:wrap}
+  button{font-family:inherit;font-size:15px;font-weight:bold;cursor:pointer;
+         border:2px solid var(--ocean);background:#fff;color:var(--ocean);
+         border-radius:22px;padding:8px 20px}
+  button.on{background:var(--ocean);color:#fff}
+  .hint{font-size:13.5px;color:var(--gray)}
+
+  .cheat{border:2px solid var(--coral);background:#fff5f2;border-radius:10px;
+         padding:14px 18px;margin-bottom:30px}
+  .cheat h2{font-size:16px;color:var(--coral);margin-bottom:9px}
+  .cheat table{width:100%;border-collapse:collapse}
+  .cheat td{padding:5px 8px;font-size:15.5px;border-bottom:1px dotted #f0cabc}
+  .cheat td:first-child{font-weight:bold;color:var(--navy);width:96px;white-space:nowrap}
+  .cheat td:nth-child(2){color:var(--gray);font-size:13.5px;width:150px}
+  .cheat tr:last-child td{border-bottom:none}
+
+  section{margin-bottom:38px}
+  h2.sec{font-size:21px;color:var(--ocean);border-left:7px solid var(--ocean);
+         padding-left:12px;margin-bottom:5px}
+  .lead{font-size:14.5px;color:var(--gray);margin:0 0 16px 19px}
+  ol{list-style:none;counter-reset:q}
+  ol li{counter-increment:q;background:#fff;border:1px solid var(--line);border-radius:9px;
+        padding:12px 16px 12px 48px;margin-bottom:9px;position:relative}
+  ol li::before{content:counter(q);position:absolute;left:14px;top:12px;
+        font-weight:bold;color:var(--ocean);font-size:16px}
+  .jp{font-size:19.5px}
+  .en{font-size:13.5px;color:var(--gray);margin-top:3px}
+  .blank{display:inline-block;min-width:118px;border-bottom:2px solid var(--coral);
+         text-align:center;color:var(--coral);font-weight:bold}
+  .ans{display:none;margin-top:7px;font-size:16.5px;color:#0a6c3d;font-weight:bold;
+       background:#eefaf2;border-radius:6px;padding:6px 11px}
+  body.show .ans{display:block}
+  footer{border-top:1px solid var(--line);margin-top:40px;padding-top:14px;
+         font-size:13px;color:var(--gray)}
+  @media print{
+    body{background:#fff;padding:0}
+    button,.hint{display:none}
+    ol li{break-inside:avoid;page-break-inside:avoid}
+  }
+</style>
+
+<div class="wrap">
+<header>
+  <h1>れんしゅう問題　―　だれか・だれも・だれでも</h1>
+  <div class="sub">9月10日（木）／ Question word ＋ か ・ も＋ないform ・ でも</div>
+</header>
+
+<div class="bar">
+  <button id="tg">こたえを 見る</button>
+  <span class="hint">クリックで こたえが 出ます。もう一度 おすと かくれます。（印刷もできます）</span>
+</div>
+
+<div class="cheat">
+  <h2>おぼえかた ― 3つだけ</h2>
+  <table>
+    <tr><td>か</td><td>some 〜（ある）</td><td>だれ<b>か</b>／何<b>か</b>／どこ<b>か</b>／いつ<b>か</b>　―　<b>「ありますか」と いっしょに つかう</b></td></tr>
+    <tr><td>も＋ない</td><td>no one / nothing</td><td>だれ<b>も</b>／何<b>も</b>／どこに<b>も</b>　―　<b>うしろは かならず ないform</b></td></tr>
+    <tr><td>でも</td><td>any 〜（ぜんぶOK）</td><td>だれ<b>でも</b>／何<b>でも</b>／どこ<b>でも</b>／いつ<b>でも</b></td></tr>
+  </table>
+</div>
+
+<section>
+  <h2 class="sec">A　どれが 入りますか</h2>
+  <p class="lead">（　　）に か ・ も ・ でも の ことばを 入れて ください。</p>
+  <ol>
+    <li><div class="jp">れいぞうこに <span class="blank">　　</span> ありません。</div>
+        <div class="en">There is nothing in the fridge.</div>
+        <div class="ans">何も</div></li>
+    <li><div class="jp">しゅうまつ <span class="blank">　　</span> 行きませんか。</div>
+        <div class="en">Won't you go somewhere this weekend?</div>
+        <div class="ans">どこかに</div></li>
+    <li><div class="jp"><span class="blank">　　</span> 来ましたよ。</div>
+        <div class="en">Someone came.</div>
+        <div class="ans">だれか</div></li>
+    <li><div class="jp">わたしは <span class="blank">　　</span> 食べます。</div>
+        <div class="en">I eat anything.</div>
+        <div class="ans">何でも</div></li>
+    <li><div class="jp">きのうは <span class="blank">　　</span> 行きませんでした。</div>
+        <div class="en">I didn't go anywhere yesterday.</div>
+        <div class="ans">どこにも</div></li>
+    <li><div class="jp"><span class="blank">　　</span> 手つだって くれませんか。</div>
+        <div class="en">Could someone help me?</div>
+        <div class="ans">だれか</div></li>
+    <li><div class="jp">きょうしつには <span class="blank">　　</span> いませんでした。</div>
+        <div class="en">There was no one in the classroom.</div>
+        <div class="ans">だれも</div></li>
+    <li><div class="jp"><span class="blank">　　</span> のみものは ありますか。</div>
+        <div class="en">Is there something to drink?</div>
+        <div class="ans">何か</div></li>
+    <li><div class="jp">土曜日なら <span class="blank">　　</span> 大じょうぶです。</div>
+        <div class="en">If it's Saturday, any time is fine.</div>
+        <div class="ans">いつでも</div></li>
+    <li><div class="jp">その話は <span class="blank">　　</span> 言って いません。</div>
+        <div class="en">I haven't told anyone about it.</div>
+        <div class="ans">だれにも</div></li>
+    <li><div class="jp">ここは <span class="blank">　　</span> 入る ことが できます。</div>
+        <div class="en">Anyone can go in here.</div>
+        <div class="ans">だれでも</div></li>
+    <li><div class="jp"><span class="blank">　　</span> 沖縄に 行って みたいです。</div>
+        <div class="en">Someday I want to go to Okinawa.</div>
+        <div class="ans">いつか</div></li>
+  </ol>
+</section>
+
+<section>
+  <h2 class="sec">B　島で 言って みましょう</h2>
+  <p class="lead">日本語で 言って ください。ぜんぶ 島で つかう ことばです。</p>
+  <ol>
+    <li><div class="jp">Is there anywhere with good fish?</div>
+        <div class="ans">どこか おいしい さかなの お店は ありますか。</div></li>
+    <li><div class="jp">Is there anything I should bring?</div>
+        <div class="ans">何か 持って いく ものは ありますか。</div></li>
+    <li><div class="jp">Is there someone who could help me?</div>
+        <div class="ans">だれか 手つだって くれる 人は いますか。</div></li>
+    <li><div class="jp">Nobody was home.</div>
+        <div class="ans">だれも いませんでした。</div></li>
+    <li><div class="jp">I didn't buy anything.</div>
+        <div class="ans">何も 買いませんでした。</div></li>
+    <li><div class="jp">We didn't go anywhere during the holidays.</div>
+        <div class="ans">やすみは どこにも 行きませんでした。</div></li>
+    <li><div class="jp">If it's Japanese food, I'll eat anything.</div>
+        <div class="ans">わしょくなら 何でも 食べます。　<span style="color:#6b7280;font-weight:normal;font-size:14px">（8月31日に 言いましたね）</span></div></li>
+    <li><div class="jp">Anyone can come.</div>
+        <div class="ans">だれでも 来る ことが できます。</div></li>
+  </ol>
+</section>
+
+<section>
+  <h2 class="sec">C　自分の 話で 1つ</h2>
+  <p class="lead">こたえは ありません。自分の ことを 話して ください。</p>
+  <ol>
+    <li><div class="jp">「どこか 〜は ありますか」で、島の人に 聞いて みる 文を 1つ。</div>
+        <div class="en">One question you could actually ask someone on the island.</div></li>
+    <li><div class="jp">「まだ どこにも 行って いません」で 1つ。</div>
+        <div class="en">Something you haven't done / anywhere you haven't been yet.</div></li>
+    <li><div class="jp">「〜なら 何でも 〜ます」で 1つ。</div>
+        <div class="en">Follow the pattern of わしょくなら何でも食べます.</div></li>
+  </ol>
+</section>
+
+<footer>
+  C&amp;K レッスン　9月10日／ことばの ふくしゅうは <b>https://kyonversation-dot.github.io/ck-kotoba/</b>
+</footer>
+</div>
+
+<script>
+  var b = document.body, t = document.getElementById('tg');
+  t.onclick = function(){
+    b.classList.toggle('show');
+    t.classList.toggle('on');
+    t.textContent = b.classList.contains('show') ? 'こたえを かくす' : 'こたえを 見る';
+  };
+</script>

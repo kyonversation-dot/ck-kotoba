@@ -53,7 +53,12 @@
          text-align:center;color:var(--coral);font-weight:bold}
   .ans{display:none;margin-top:7px;font-size:16.5px;color:#0a6c3d;font-weight:bold;
        background:#eefaf2;border-radius:6px;padding:6px 11px}
-  body.show .ans{display:block}
+  li.q{cursor:pointer;transition:border-color .15s}
+  li.q:hover{border-color:var(--ocean)}
+  li.q.open{border-color:#9fd9b8}
+  li.q.open .ans{display:block}
+  .cue{font-size:12.5px;color:#9aa3ad;margin-top:5px}
+  li.q.open .cue{display:none}
   footer{border-top:1px solid var(--line);margin-top:40px;padding-top:14px;
          font-size:13px;color:var(--gray)}
   @media print{
@@ -71,8 +76,8 @@
 </header>
 
 <div class="bar">
-  <button id="tg">こたえを 見る</button>
-  <span class="hint">クリックで こたえが 出ます。もう一度 おすと かくれます。（印刷もできます）</span>
+  <button id="closeall">ぜんぶ かくす</button>
+  <span class="hint">問題を クリックすると、<b>その問題の こたえだけ</b> 出ます。もう一度 おすと かくれます。（印刷もできます）</span>
 </div>
 
 <div class="cheat">
@@ -215,10 +220,18 @@
 </div>
 
 <script>
-  var b = document.body, t = document.getElementById('tg');
-  t.onclick = function(){
-    b.classList.toggle('show');
-    t.classList.toggle('on');
-    t.textContent = b.classList.contains('show') ? 'こたえを かくす' : 'こたえを 見る';
+  // ★1問ずつ：クリックした問題の こたえだけ 出す（2026-09-14キヨ「一辺で全部出るのが良くない」）
+  document.querySelectorAll('ol li').forEach(function(li){
+    var ans = li.querySelector('.ans');
+    if(!ans) return;                      // F-7（じぶんで）は こたえ無し
+    li.classList.add('q');
+    var cue = document.createElement('div');
+    cue.className = 'cue';
+    cue.textContent = '▶ クリックで こたえ';
+    li.insertBefore(cue, ans);
+    li.addEventListener('click', function(){ li.classList.toggle('open'); });
+  });
+  document.getElementById('closeall').onclick = function(){
+    document.querySelectorAll('li.q.open').forEach(function(li){ li.classList.remove('open'); });
   };
 </script>

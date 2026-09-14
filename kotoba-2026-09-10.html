@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9月10日の ことば ふくしゅう</title>
+<style>
+  :root{
+    --ground:#eef1f6; --card:#ffffff; --card-border:#e7ebf0;
+    --ink:#22303f; --ink-soft:#5b6773; --muted:#98a2ae;
+    --accent:#14795d; --accent-ink:#ffffff;
+    --tab-bg:#e4e8ee; --tab-ink:#55606d;
+    --banner-bg:#e9f8f0; --banner-edge:#14795d; --banner-ink:#2f6d56;
+    --reveal-bg:#f3faf7; --reveal-ink:#155f49; --reveal-edge:#bfe6d6;
+    --tag-bg:#fdf1cf; --tag-ink:#8a6a12;
+    --shadow:rgba(30,50,80,.07);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --ground:#10161d; --card:#1a2531; --card-border:#26333f;
+      --ink:#e8eef4; --ink-soft:#a9b5c1; --muted:#6f7d8a;
+      --accent:#3fbf92; --accent-ink:#06231a;
+      --tab-bg:#222f3b; --tab-ink:#a9b5c1;
+      --banner-bg:#14261f; --banner-edge:#3fbf92; --banner-ink:#8fdcbf;
+      --reveal-bg:#152a22; --reveal-ink:#8fdcbf; --reveal-edge:#2c5344;
+      --tag-bg:#3a3320; --tag-ink:#e8cf8e;
+      --shadow:rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:"Hiragino Maru Gothic ProN","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Meiryo","Noto Sans JP",system-ui,sans-serif;
+    line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:22px 18px 64px;}
+  h1{
+    font-size:1.05rem; font-weight:700; color:var(--ink-soft);
+    text-align:center; margin:4px 0 18px; letter-spacing:.02em;
+  }
+  .tabs{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:20px;}
+  .tab{
+    appearance:none; border:none; cursor:pointer;
+    font:inherit; font-weight:700; font-size:.95rem;
+    padding:9px 20px; border-radius:999px;
+    background:var(--tab-bg); color:var(--tab-ink);
+    transition:background .15s, color .15s, transform .05s;
+  }
+  .tab:hover{filter:brightness(.98)}
+  .tab:active{transform:translateY(1px)}
+  .tab[aria-selected="true"]{background:var(--accent); color:var(--accent-ink);}
+  .tab:focus-visible{outline:3px solid var(--accent); outline-offset:2px;}
+  .banner{
+    background:var(--banner-bg); color:var(--banner-ink);
+    border-left:4px solid var(--banner-edge); border-radius:8px;
+    padding:12px 16px; margin-bottom:18px; font-size:.95rem; font-weight:500;
+  }
+  .cards{display:flex; flex-direction:column; gap:14px;}
+  .card{
+    background:var(--card); border:1px solid var(--card-border);
+    border-radius:14px; padding:18px 20px; box-shadow:0 2px 10px var(--shadow);
+    cursor:pointer; transition:border-color .15s, box-shadow .15s;
+  }
+  .card:hover{border-color:var(--accent);}
+  .card:focus-visible{outline:3px solid var(--accent); outline-offset:2px;}
+  .card.open{border-color:var(--reveal-edge);}
+  .prompt{font-size:1.22rem; font-weight:600; color:var(--ink); margin:0;}
+  .tag{
+    display:inline-block; vertical-align:middle; margin-left:8px;
+    background:var(--tag-bg); color:var(--tag-ink);
+    font-size:.72rem; font-weight:700; padding:2px 9px; border-radius:6px;
+  }
+  .cue{
+    display:flex; align-items:center; gap:6px;
+    margin-top:10px; color:var(--muted); font-size:.82rem; font-weight:500;
+  }
+  .cue .hint{color:var(--muted);}
+  .answer{
+    display:none; margin-top:12px; padding:12px 14px;
+    background:var(--reveal-bg); color:var(--reveal-ink);
+    border-radius:10px; font-size:1.06rem; font-weight:600;
+  }
+  .answer .rd{font-size:1.14rem;}
+  .answer .ex{display:block; margin-top:6px; font-weight:500;}
+  .card.open .answer{display:block; animation:pop .18s ease;}
+  .card.open .cue{display:none;}
+  @keyframes pop{from{opacity:0; transform:translateY(-3px)} to{opacity:1; transform:none}}
+  @media (prefers-reduced-motion:reduce){.card.open .answer{animation:none}}
+  .foot{display:flex; justify-content:center; margin-top:26px;}
+  .closeall{
+    appearance:none; border:none; cursor:pointer; font:inherit; font-weight:700;
+    color:var(--tab-ink); background:var(--tab-bg);
+    padding:11px 26px; border-radius:999px;
+  }
+  .closeall:hover{filter:brightness(.98)}
+  .closeall:focus-visible{outline:3px solid var(--accent); outline-offset:2px;}
+  .panel[hidden]{display:none !important;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>9月10日の ことば　ふくしゅう　／　Words from 10 September</h1>
+
+  <div class="tabs" role="tablist" aria-label="グループ">
+    <button class="tab" role="tab" id="tab-0" aria-controls="panel-0" aria-selected="true">① 家を かりる</button>
+    <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="false">② 〜に ついて くわしい</button>
+    <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false">③ 育つ・伸びる</button>
+    <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false">④ いつでも・何でも</button>
+    <button class="tab" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false">⑤ そのほか</button>
+    <button class="tab" role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false">⑥ つかってみる</button>
+  </div>
+
+  <div class="banner" id="banner"></div>
+
+  <div class="panel" id="panel-0" role="tabpanel" aria-labelledby="tab-0"><div class="cards"></div></div>
+  <div class="panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1" hidden><div class="cards"></div></div>
+  <div class="panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden><div class="cards"></div></div>
+  <div class="panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden><div class="cards"></div></div>
+  <div class="panel" id="panel-4" role="tabpanel" aria-labelledby="tab-4" hidden><div class="cards"></div></div>
+  <div class="panel" id="panel-5" role="tabpanel" aria-labelledby="tab-5" hidden><div class="cards"></div></div>
+
+  <div class="foot"><button class="closeall" id="closeall">ぜんぶ とじる</button></div>
+</div>
+
+<script>
+  const BANNERS = [
+    "★「借りる」＝もらう がわ。「貸す」＝あげる がわ。ペアで おぼえましょう。",
+    "「〜に ついて」＝about。「詳しい」＝よく 知って いる。★「だいぶ 〜く なりましたね」は 島で よく つかえます。",
+    "★「背が 伸びました」＝got taller。「背が 高いです」＝is tall。ここが ちがいます。",
+    "★今日の 文法と つながって います。「いつ＋でも」「何＋でも」＝どれでも OK。",
+    "そのほかの ことばです。「中毒」は 食中毒・アルコール中毒の 2つで おぼえましょう。",
+    "ことばを つかって、じぶんの ことばで 答えましょう。クリックで 言い方の れいが 出ます。"
+  ];
+
+  const IE = [
+    {"p": "借りる", "rd": "かりる", "en": "to borrow, to rent (from someone)", "ex": "今、わたしたちは 家を 借りて います。（We are renting a house.）", "tag": "★ペア", "hint": "じぶんが もらう"},
+    {"p": "貸す", "rd": "かす", "en": "to lend, to rent out (to someone)", "ex": "家を 貸して いますか。（Are you renting out a house?）", "hint": "じぶんが あげる"},
+    {"p": "持ち家", "rd": "もちいえ", "en": "a house you own", "ex": "持ち家ですか。（Do you own your house?）"},
+    {"p": "借家", "rd": "しゃくや", "en": "a rented house", "ex": "借家ですか。借りて いますか。（Is it rented? Are you renting?）"},
+    {"p": "家を 持って いますか。借りて いますか。", "rd": "いえを もって いますか。かりて いますか。", "en": "Do you own a house, or are you renting?", "ex": ""},
+    {"p": "借り方", "rd": "かりかた", "en": "how to rent", "ex": "島の 家の 借り方に ついて 知って いますか。（Do you know how renting a house works on the island?）", "tag": "形", "hint": "〜かた＝how to"}
+  ];
+
+  const KUWASHII = [
+    {"p": "〜に ついて 知って いますか。", "rd": "〜に ついて しって いますか", "en": "Do you know about ~?", "ex": "島の 家の レンタルに ついて 知って いますか。（Do you know about renting houses on the island?）", "tag": "★"},
+    {"p": "〜に ついて 詳しい", "rd": "〜に ついて くわしい", "en": "to know a lot about ~", "ex": "あの 人は サイクリングに ついて 詳しいですね。（That person knows a lot about cycling.）"},
+    {"p": "アメリカンフットボールに ついて 詳しいです。", "en": "I know a lot about American football.", "ex": ""},
+    {"p": "だいぶ（だいぶん）", "en": "quite a lot, considerably", "ex": "だいぶ 詳しく なりましたね。（You've become quite an expert.）", "hint": "〜く なりました と いっしょに"},
+    {"p": "だいぶ 大きく なりましたね。", "rd": "だいぶ おおきく なりましたね", "en": "(Your child) has grown so much!", "ex": "", "tag": "★島"},
+    {"p": "じこしょうかい", "en": "a self-introduction", "ex": ""},
+    {"p": "〜を しょうかいします。", "en": "I'll introduce ~", "ex": "友達を しょうかいします。（Let me introduce my friend.）"},
+    {"p": "〜を しょうかいして ください。", "en": "Please introduce ~ (to me)", "ex": "だれか いい 大工さんを しょうかいして ください。（Could you introduce me to a good carpenter?）"}
+  ];
+
+  const SODATSU = [
+    {"p": "育つ", "rd": "そだつ", "en": "to grow (up)", "ex": "子どもが 育ちます。（Children grow up.）／花が 育ちます。（Flowers grow.）", "tag": "★ペア"},
+    {"p": "伸びる", "rd": "のびる", "en": "to grow longer, to stretch", "ex": "えだが 伸びて、大きく なりました。（The branches grew long and big.）"},
+    {"p": "木が 大きく 育って いて、家に 入れませんでした。", "rd": "きが おおきく そだって いて、いえに はいれませんでした", "en": "The trees had grown so big that we couldn't get into the house.", "ex": "", "hint": "空き家の 話"},
+    {"p": "背が 伸びました。", "rd": "せが のびました", "en": "(he / she) got taller", "ex": "背が 伸びましたねえ。（You've grown taller!）", "tag": "★"},
+    {"p": "背が 高いです。", "rd": "せが たかいです", "en": "(he / she) is tall — not “got taller”", "ex": "", "hint": "伸びました と ちがいます"},
+    {"p": "かみの毛が 伸びます。", "rd": "かみのけが のびます", "en": "hair grows (longer)", "ex": "かみの毛が 長く なりました。（My hair got long.）"}
+  ];
+
+  const DEMO = [
+    {"p": "いつでも 言って ください。", "rd": "いつでも いって ください", "en": "Tell me any time.", "ex": "何か あったら、いつでも 言って ください。（If anything comes up, just tell me.）", "tag": "★今日の文法"},
+    {"p": "いつでも 手伝いますよ。", "rd": "いつでも てつだいますよ", "en": "I'm happy to help any time.", "ex": ""},
+    {"p": "いつでも 来て ください。", "rd": "いつでも きて ください", "en": "Come any time.", "ex": ""},
+    {"p": "何でも 食べます。", "rd": "なんでも たべます", "en": "I eat anything.", "ex": ""},
+    {"p": "嫌いな ものは ありますか。", "rd": "きらいな ものは ありますか", "en": "Is there anything you don't like (to eat)?", "ex": "", "tag": "★島", "hint": "ごはんに よばれた とき"},
+    {"p": "ほとんど ないです。", "en": "Hardly anything.", "ex": ""},
+    {"p": "アボカドは 好きじゃないけど、ほかは 何でも 食べられます。", "rd": "すきじゃないけど、ほかは なんでも たべられます", "en": "I don't like avocado, but I can eat everything else.", "ex": "", "hint": "話す ときは「たべれます」も よく 聞きます"}
+  ];
+
+  const SONOTA = [
+    {"p": "中毒", "rd": "ちゅうどく", "en": "poisoning; addiction", "ex": "", "tag": "漢字"},
+    {"p": "食中毒", "rd": "しょくちゅうどく", "en": "food poisoning", "ex": "旅行中に 食中毒に なりました。（I got food poisoning while travelling.）"},
+    {"p": "アルコール中毒（アル中）", "rd": "あるこーるちゅうどく（あるちゅう）", "en": "alcoholism; alcohol poisoning", "ex": ""},
+    {"p": "送り状", "rd": "おくりじょう", "en": "a shipping slip (the label you fill in to send a parcel)", "ex": "", "hint": "送ります の なかま"},
+    {"p": "二年保育・三年保育", "rd": "にねんほいく・さんねんほいく", "en": "a two-year / three-year kindergarten course", "ex": ""},
+    {"p": "先週は あまり 雨が 降らなかった。", "rd": "せんしゅうは あまり あめが ふらなかった", "en": "It didn't rain much last week.", "ex": ""},
+    {"p": "風が 強かったです。", "rd": "かぜが つよかったです", "en": "It was windy.", "ex": ""}
+  ];
+
+  const USE = [
+    {"p": "1. 「家を 持って いますか。借りて いますか。」と 聞かれました。答えて ください。", "ex": "れい：今は 家を 借りて います。", "hint": "①の 言い方"},
+    {"p": "2. あなたは 何に ついて 詳しいですか。", "ex": "れい：わたしは サイクリングに ついて 詳しいです。", "hint": "②の 言い方"},
+    {"p": "3. 久しぶりに 会った 子どもに、何と 言いますか。", "ex": "れい：背が 伸びましたねえ。だいぶ 大きく なりましたね。", "hint": "②と ③"},
+    {"p": "4. 島の 人に「いつでも」を つかって 一言。", "ex": "れい：何か あったら、いつでも 言って ください。", "hint": "今日の 文法"},
+    {"p": "5. ごはんに よばれて「嫌いな ものは ありますか」と 聞かれたら？", "ex": "れい：ほとんど ないです。〇〇は 好きじゃないけど、ほかは 何でも 食べられます。", "hint": "④の 言い方"}
+  ];
+
+  const DATA = [IE, KUWASHII, SODATSU, DEMO, SONOTA, USE];
+  const IDX = [0,1,2,3,4,5];
+  const panels = IDX.map(i => document.getElementById("panel-"+i));
+  const tabs = IDX.map(i => document.getElementById("tab-"+i));
+
+  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+  function render(){
+    DATA.forEach((set, i) => {
+      const box = panels[i].querySelector(".cards");
+      box.innerHTML = set.map(item => {
+        const tag  = item.tag  ? `<span class="tag">${esc(item.tag)}</span>` : "";
+        const hint = item.hint ? `<span class="hint">（${esc(item.hint)}）</span>` : "";
+        const rd   = item.rd   ? `<span class="rd">${esc(item.rd)}</span>` : "";
+        const en   = item.en   ? `${rd ? "　／　" : ""}${esc(item.en)}` : "";
+        const ex   = item.ex   ? `<span class="ex">${esc(item.ex)}</span>` : "";
+        return `<div class="card" tabindex="0" role="button" aria-expanded="false">
+            <p class="prompt">${esc(item.p)}${tag}</p>
+            <div class="cue">▶ クリック ${hint}</div>
+            <div class="answer">${rd}${en}${ex}</div>
+          </div>`;
+      }).join("");
+    });
+  }
+
+  function toggle(card){
+    const open = card.classList.toggle("open");
+    card.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
+  document.addEventListener("click", e => {
+    const card = e.target.closest(".card");
+    if(card){ toggle(card); }
+  });
+  document.addEventListener("keydown", e => {
+    if((e.key === "Enter" || e.key === " ") && e.target.classList.contains("card")){
+      e.preventDefault(); toggle(e.target);
+    }
+  });
+
+  function selectTab(idx){
+    tabs.forEach((t,i) => t.setAttribute("aria-selected", i === idx ? "true" : "false"));
+    panels.forEach((p,i) => p.hidden = i !== idx);
+    document.getElementById("banner").textContent = BANNERS[idx];
+  }
+  tabs.forEach((t,i) => t.addEventListener("click", () => selectTab(i)));
+
+  document.getElementById("closeall").addEventListener("click", () => {
+    document.querySelectorAll(".card.open").forEach(c => {
+      c.classList.remove("open"); c.setAttribute("aria-expanded","false");
+    });
+  });
+
+  render();
+  selectTab(0);
+</script>
+</body>
+</html>
